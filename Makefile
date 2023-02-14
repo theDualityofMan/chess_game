@@ -1,11 +1,11 @@
 chess: main.o functions.o
-	gcc main.o functions.o -o chess
+	gcc main.o functions.o -o bin/chess.exe
 
-main.o:	main.c
-	gcc -std=c99 -Wall -c main.c
+main.o:	src/main.c
+	gcc -std=c99 -Wall -I include -c src/main.c
 
-functions.o: functions.c
-	gcc -std=c99 -Wall -c functions.c
+functions.o: src/functions.c
+	gcc -std=c99 -Wall -I include -c src/functions.c
 
 clean:
 	del *.o 
